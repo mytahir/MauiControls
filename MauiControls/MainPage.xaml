@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiControls.MainPage"
+             xmlns:controls="clr-namespace:AlohaKit.Controls;assembly=AlohaKit"
+             Title="MainPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid>
+        <ScrollView>
+            <VerticalStackLayout Spacing="10" Margin="0,20">
+                <Label Text="AbsoluteLayout" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <AbsoluteLayout Margin="20">
+                    <BoxView Color="Silver"
+                 AbsoluteLayout.LayoutBounds="0, 10, 220, 5" />
+                    <BoxView Color="Silver"
+                 AbsoluteLayout.LayoutBounds="0, 20, 220, 5" />
+                    <BoxView Color="Silver"
+                 AbsoluteLayout.LayoutBounds="10, 0, 5, 85" />
+                    <BoxView Color="Silver"
+                 AbsoluteLayout.LayoutBounds="20, 0, 5, 85" />
+                    <Label Text="By Mustapha"
+               FontSize="24"
+               AbsoluteLayout.LayoutBounds="30, 25" />
+                    <BoxView Color="Silver"
+                 AbsoluteLayout.LayoutBounds="0, 58, 220, 5" />
+                    <BoxView Color="Silver"
+                 AbsoluteLayout.LayoutBounds="0, 68, 220, 5" />
+                    <BoxView Color="Silver"
+                 AbsoluteLayout.LayoutBounds="195, 0, 5, 85" />
+                    <BoxView Color="Silver"
+                 AbsoluteLayout.LayoutBounds="205, 0, 5, 85" />
+                </AbsoluteLayout>
+
+                <Label Text="BindableLayout" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+
+                <Label Text="FlexLayout" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+
+                <Label Text="ActivityIndicator" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <ActivityIndicator IsRunning="true"
+                   Color="Orange" />
+
+                <Label Text="BlazorWebView" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <!--<BlazorWebView HostPage="https://google.com">
+                    <BlazorWebView.RootComponents>
+                        <RootComponent Selector="#app" ComponentType="{x:Type local:MauiBlazor}" />
+                    </BlazorWebView.RootComponents>
+                </BlazorWebView>-->
+                <Label Text="Border" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <Border StrokeThickness="4"
+        StrokeShape="RoundRectangle 40,40,0,40"
+        Background="#2B0B98"
+        Padding="16,8"
+        HorizontalOptions="Center">
+                    <Border.Stroke>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="Orange"
+                          Offset="0.1" />
+                            <GradientStop Color="Brown"
+                          Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Border.Stroke>
+                    <Label Text="Border"
+           TextColor="White"
+           FontSize="18"
+           FontAttributes="Bold" />
+                </Border>
+
+                <Label Text="Box View" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <BoxView Color="BlueViolet"
+             CornerRadius="10"
+             WidthRequest="160"
+             HeightRequest="160"
+             VerticalOptions="Center"
+             HorizontalOptions="Center"/>
+
+                <Label Text="Button" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <Button Text="This is a Button!"
+                VerticalOptions="Center"
+                HorizontalOptions="Center" />
+                <Label Text="CarouselView" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <!--<CarouselView ItemsSource="{Binding Animals}"
+                      RemainingItemsThreshold="2"
+                      RemainingItemsThresholdReached="OnCarouselViewRemainingItemsThresholdReached"
+                      RemainingItemsThresholdReachedCommand="{Binding LoadMoreDataCommand}">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Frame HasShadow="True"
+                               BorderColor="DarkGray"
+                               CornerRadius="5"
+                               Margin="20"
+                               HeightRequest="300"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center">
+                                    <StackLayout>
+                                        <Label Text="{Binding Name}" 
+                                       FontAttributes="Bold"
+                                       FontSize="20"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center" />
+                                        <Image Source="{Binding ImageUrl}" 
+                                       Aspect="AspectFill"
+                                       HeightRequest="150"
+                                       WidthRequest="150"
+                                       HorizontalOptions="Center" />
+                                        <Label Text="{Binding Location}"
+                                       HorizontalOptions="Center" />
+                                        <Label Text="{Binding Details}"
+                                       FontAttributes="Italic"
+                                       HorizontalOptions="Center"
+                                       MaxLines="5"
+                                       LineBreakMode="TailTruncation" />
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>-->
+
+                <Label Text="Check Box" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <CheckBox Color="DarkCyan" />
+
+                <Label Text="Collection View" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+
+                <Label Text="Content View" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+
+                <Label Text="Date Picker" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <Border Stroke="Black"
+                        StrokeThickness="1"
+                        HorizontalOptions="Center"
+                        Padding="20">
+                    <DatePicker MinimumDate="01/01/2022"
+                        MaximumDate="12/31/2022"
+                        Date="06/21/2022" />
+                </Border>
+
+                <Label Text="Editor" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <Border Margin="10,0">
+                    <Editor x:Name="editor" Margin="5,0"
+                        Placeholder="Enter your response here"
+                        HeightRequest="250"
+                        IsTextPredictionEnabled="True"/>
+                </Border>
+
+                <Label Text="Entry" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <Border Margin="10,0">
+                    <Entry Placeholder="Enter your name here" Margin="5,0"/>
+                </Border>
+
+                <Label Text="Ellipse" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <Ellipse Stroke="Red"
+                     StrokeThickness="4"
+                     WidthRequest="150"
+                     HeightRequest="150"
+                     HorizontalOptions="Center" />
+
+                <Label Text="Switch" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <Switch OnColor="BlueViolet" ThumbColor="LightBlue" HorizontalOptions="Center"/>
+
+                <Label Text="AlohaKit" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="22" HorizontalOptions="Center"
+                       TextColor="Brown"/>
+                <Label Text="Avatar" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <controls:Avatar
+                    Name="Javier Suarez"/>
+                
+                <Label Text="Button" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <controls:Button Text="Button" HorizontalOptions="Center" BackgroundColor="Blue" />
+
+                <Label Text="Buzy Indicator" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <controls:BusyIndicator Color="Yellow"  HorizontalOptions="Center" BackgroundColor="Blue" />
+
+                <Label Text="Check Box" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <controls:CheckBox  HorizontalOptions="Center" />
+
+                <Label Text="Progress Bar" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <Border HorizontalOptions="Center"
+                        StrokeThickness="2"
+        StrokeShape="RoundRectangle 20,20,20,20"
+        Background="#2B0B98">
+                    <controls:HorizontalProgressBar Progress="30"  ProgressBrush="Blue"/>
+                </Border>
+                
+                <Label Text="Numeric UpDown" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <controls:NumericUpDown Color="Green"  HorizontalOptions="Center" />
+
+                <Label Text="Progress Radial" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <controls:ProgressRadial ProgressColor="Black" Value="40"  HorizontalOptions="Center" />
+
+                <Label Text="Pulse Icon" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <controls:PulseIcon PulseColor="BlueViolet" BackgroundColor="Black"  HorizontalOptions="Center" />
+
+                <Label Text="Rating" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <controls:Rating ItemsCount="5" BackgroundColor="Brown" Value="2"  HorizontalOptions="Center" />
+
+                <Label Text="Slider" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <Border HorizontalOptions="Center"
+                        StrokeThickness="2" Padding="8,4"
+                        StrokeShape="RoundRectangle 20,20,20,20"
+                        Background="#2B0B98">
+                    <controls:Slider ThumbBrush="Red"     BackgroundColor="Navy"  HorizontalOptions="Center" />
+                </Border>
+
+                <Label Text="Toggle Switch" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <Border HorizontalOptions="Center"
+                        StrokeThickness="2"
+                        StrokeShape="RoundRectangle 20,20,20,20">
+                    <controls:ToggleSwitch ThumbBrush="Blue" BackgroundColor="Chocolate"   HorizontalOptions="Center" />
+                </Border>
+                
+                <Label Text="Vertical ProgressBar" Margin="10,20,0,0" FontAttributes="Bold" TextDecorations="Underline" FontSize="16"/>
+                <Border HorizontalOptions="CenterAndExpand"
+                        StrokeThickness="2" HeightRequest="80"
+        StrokeShape="RoundRectangle 20,20,20,20"
+        Background="#2B0B98">
+                    <controls:VerticalProgressBar ProgressBrush=" Orange"  Progress="10" />
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
