@@ -66,8 +66,8 @@ jobs:
       - name: Install MAUI Workload
         run: dotnet workload install maui --ignore-failed-sources
 
-      - name: Restore Dependencies
-        run: dotnet restore src/MauiControls/MauiControls.csproj
+      - name: Restore dependencies
+        run: dotnet restore
 
       - name: Build MAUI Windows
         run: dotnet publish src/MauiControls/MauiControls.csproj -c Release -f net6.0-windows10.0.19041.0 --no-restore
