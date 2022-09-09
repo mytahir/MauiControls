@@ -38,16 +38,16 @@ jobs:
         run: dotnet workload install maui --ignore-failed-sources
 
       - name: Restore Dependencies
-        run: dotnet restore
+        run: dotnet restore MauiControls/MauiControls.csproj
 
       - name: Build MAUI Android
-        run: dotnet publish src/MauiControls/MauiControls.csproj -c Release -f net6.0-android --no-restore
+        run: dotnet publish MauiControls/MauiControls.csproj -c Release -f net6.0-android --no-restore
 
       - name: Upload Android Artifact
         uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8
         with:
           name: mauibeach-android-ci-build
-          path: src/MauiControls/bin/Release/net6.0-android/*Signed.a*
+          path: MauiControls/bin/Release/net6.0-android/*Signed.a*
 
 # MAUI Windows Build
   build-windows:
@@ -66,17 +66,17 @@ jobs:
       - name: Install MAUI Workload
         run: dotnet workload install maui --ignore-failed-sources
 
-      - name: Restore dependencies
-        run: dotnet restore
+      - name: Restore Dependencies
+        run: dotnet restore MauiControls/MauiControls.csproj
 
       - name: Build MAUI Windows
-        run: dotnet publish src/MauiControls/MauiControls.csproj -c Release -f net6.0-windows10.0.19041.0 --no-restore
+        run: dotnet publish MauiControls/MauiControls.csproj -c Release -f net6.0-windows10.0.19041.0 --no-restore
 
       - name: Upload Windows Artifact
         uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8
         with:
           name: MauiControls-windows-ci-build
-          path: src/MauiControls/bin/Release/net6.0-windows10.0.19041.0/win10-x64/AppPackages/MauiBeach*/MauiBeach*.msix
+          path: MauiControls/bin/Release/net6.0-windows10.0.19041.0/win10-x64/AppPackages/MauiBeach*/MauiBeach*.msix
 
 # MAUI iOS Build
   build-ios:
@@ -96,16 +96,16 @@ jobs:
         run: dotnet workload install maui --ignore-failed-sources
 
       - name: Restore Dependencies
-        run: dotnet restore
+        run: dotnet restore MauiControls/MauiControls.csproj
 
       - name: Build MAUI iOS
-        run: dotnet build src/MauiControls/MauiControls.csproj -c Release -f net6.0-ios --no-restore /p:buildForSimulator=True /p:packageApp=True /p:ArchiveOnBuild=False
+        run: dotnet build MauiControls/MauiControls.csproj -c Release -f net6.0-ios --no-restore /p:buildForSimulator=True /p:packageApp=True /p:ArchiveOnBuild=False
 
       - name: Upload iOS Artifact
         uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8
         with:
-          name: MauiControls-ios-ci-build
-          path: src/MauiControls/bin/Release/net6.0-ios/iossimulator-x64/**/*.app
+          name: mauibeach-ios-ci-build
+          path: MauiControls/bin/Release/net6.0-ios/iossimulator-x64/**/*.app
 
 # MAUI MacCatalyst Build
   build-mac:
@@ -125,13 +125,13 @@ jobs:
         run: dotnet workload install maui --ignore-failed-sources
 
       - name: Restore Dependencies
-        run: dotnet restore
+        run: dotnet restore MauiControls/MauiControls.csproj
 
       - name: Build MAUI MacCatalyst
-        run: dotnet publish src/MauiControls/MauiControls.csproj -c Release -f net6.0-maccatalyst --no-restore -p:BuildIpa=True
+        run: dotnet publish MauiControls/MauiControls.csproj -c Release -f net6.0-maccatalyst --no-restore -p:BuildIpa=True
 
       - name: Upload MacCatalyst Artifact
         uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8
         with:
-          name: MauiControls-macos-ci-build
-          path: src/MauiBeach/bin/Release/net6.0-maccatalyst/maccatalyst-x64/publish/*.pkg
+          name: mauibeach-macos-ci-build
+          path: MauiControls/bin/Release/net6.0-maccatalyst/maccatalyst-x64/publish/*.pkg
