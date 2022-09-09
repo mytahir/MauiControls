@@ -38,7 +38,7 @@ jobs:
         run: dotnet workload install maui --ignore-failed-sources
 
       - name: Restore Dependencies
-        run: dotnet restore src/MauiControls/MauiControls.csproj
+        run: dotnet restore
 
       - name: Build MAUI Android
         run: dotnet publish src/MauiControls/MauiControls.csproj -c Release -f net6.0-android --no-restore
@@ -96,7 +96,7 @@ jobs:
         run: dotnet workload install maui --ignore-failed-sources
 
       - name: Restore Dependencies
-        run: dotnet restore src/MauiControls/MauiControls.csproj
+        run: dotnet restore
 
       - name: Build MAUI iOS
         run: dotnet build src/MauiControls/MauiControls.csproj -c Release -f net6.0-ios --no-restore /p:buildForSimulator=True /p:packageApp=True /p:ArchiveOnBuild=False
@@ -125,7 +125,7 @@ jobs:
         run: dotnet workload install maui --ignore-failed-sources
 
       - name: Restore Dependencies
-        run: dotnet restore src/MauiControls/MauiControls.csproj
+        run: dotnet restore
 
       - name: Build MAUI MacCatalyst
         run: dotnet publish src/MauiControls/MauiControls.csproj -c Release -f net6.0-maccatalyst --no-restore -p:BuildIpa=True
